@@ -7,10 +7,10 @@ public class PlayerMove : MonoBehaviour
     
     // 필요 필드 :
     public float Speed;
-    public float LeftMoveLimit = -2.86f;
-    public float RightMoveLimit = 2.86f;
-    public float UpMoveLimit = -0.56f;
-    public float DownMoveLimit = -5.00f;
+    private float _leftMoveLimit = -2.86f;
+    private float _rightMoveLimit = 2.86f;
+    private float _upMoveLimit = -0.56f;
+    private float _downMoveLimit = -5.00f;
     
     
     // Update() 함수는 매 프레임마다 실행된다.
@@ -42,29 +42,38 @@ public class PlayerMove : MonoBehaviour
         Vector2 pos = transform.position;
 
         // 좌, 우 자동 순간이동 기능
-        if (pos.x < LeftMoveLimit)
+        if (pos.x < _leftMoveLimit)
         {
-            pos.x = RightMoveLimit;
+            pos.x = _rightMoveLimit;
         }
-        else if (pos.x > RightMoveLimit)
+        else if (pos.x > _rightMoveLimit)
         {
-            pos.x = LeftMoveLimit;
+            pos.x = _leftMoveLimit;
         }
         
         transform.position = pos;
         
         // 상, 하 이동 가능 경계
-        if (pos.y < DownMoveLimit)
+        if (pos.y < _downMoveLimit)
         {
-            pos.y = DownMoveLimit;
+            pos.y = _downMoveLimit;
         }
-        else if (pos.y > UpMoveLimit)
+        else if (pos.y > _upMoveLimit)
         {
-            pos.y = UpMoveLimit;
+            pos.y = _upMoveLimit;
         }
         
         transform.position = pos;
         
+        // "E" 키로 속도 증가, "Q" 키로 속도 감소
+        if (Input.GetKey(KeyCode.E))
+        {
+            Speed += 0.01f;
+        }
+        else if (Input.GetKey(KeyCode.Q))
+        {
+            Speed -= 0.01f;
+        }
         
         
     }

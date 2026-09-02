@@ -17,6 +17,25 @@ public class PlayerMove : MonoBehaviour
     // 초당 프레임 횟수는 따로 설정하지 않으면 컴퓨터 성능에 따라 다르다.
     private void Update()
     {
+        Move();
+        SpeedChange();
+    }
+
+    private void SpeedChange()
+    {
+        // "E" 키로 속도 증가, "Q" 키로 속도 감소
+        if (Input.GetKey(KeyCode.E))
+        {
+            Speed += 0.01f * Time.deltaTime;
+        }
+        else if (Input.GetKey(KeyCode.Q))
+        {
+            Speed -= 0.01f * Time.deltaTime;
+        }
+    }
+
+    private void Move()
+    {
         // 모든 게임의 공통된 이동 구현 순서
         // 1. 키보드 입력을 받는다.
         float h = Input.GetAxisRaw("Horizontal");  // 키보드 왼/오른쪽 입력 상태에 따라 -1f ~ 0 ~ 1f 로 반환
@@ -62,17 +81,6 @@ public class PlayerMove : MonoBehaviour
         }
         
         transform.position = pos;
-        
-        // "E" 키로 속도 증가, "Q" 키로 속도 감소
-        if (Input.GetKey(KeyCode.E))
-        {
-            Speed += 0.01f * Time.deltaTime;
-        }
-        else if (Input.GetKey(KeyCode.Q))
-        {
-            Speed -= 0.01f * Time.deltaTime;
-        }
-        
-        
     }
+    
 }

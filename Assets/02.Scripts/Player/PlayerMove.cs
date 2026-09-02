@@ -1,4 +1,6 @@
+using System.Numerics;
 using UnityEngine;
+using Vector2 = UnityEngine.Vector2;
 
 public class PlayerMove : MonoBehaviour
 {
@@ -18,7 +20,9 @@ public class PlayerMove : MonoBehaviour
     private void Update()
     {
         Move();
+        
         SpeedChange();
+        
     }
 
     private void SpeedChange()
@@ -82,5 +86,7 @@ public class PlayerMove : MonoBehaviour
         
         transform.position = pos;
     }
+
+    
     
 }

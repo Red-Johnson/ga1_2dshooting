@@ -38,8 +38,10 @@ public class PlayerMove : MonoBehaviour
         // 새로운 위치 = 현재 위치 + (방향 * 속력 * 시간)
         // transform.position = transform.position + (Vector3)direction * Speed * Time.deltaTime;
 
+        // 현재 위치 값 저장
         Vector2 pos = transform.position;
 
+        // 좌, 우 자동 순간이동 기능
         if (pos.x < LeftMoveLimit)
         {
             pos.x = RightMoveLimit;
@@ -48,7 +50,22 @@ public class PlayerMove : MonoBehaviour
         {
             pos.x = LeftMoveLimit;
         }
-
+        
         transform.position = pos;
+        
+        // 상, 하 이동 가능 경계
+        if (pos.y < DownMoveLimit)
+        {
+            pos.y = DownMoveLimit;
+        }
+        else if (pos.y > UpMoveLimit)
+        {
+            pos.y = UpMoveLimit;
+        }
+        
+        transform.position = pos;
+        
+        
+        
     }
 }

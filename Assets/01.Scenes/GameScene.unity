@@ -119,6 +119,37 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &512183533
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 512183534}
+  m_Layer: 0
+  m_Name: RightWeakFirePoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 7148428337604731935, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &512183534
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 512183533}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.2, y: 0.2, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 839388166}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -255,6 +286,37 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &596656527
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 596656528}
+  m_Layer: 0
+  m_Name: LeftWeakFirePoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 7148428337604731935, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &596656528
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 596656527}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.2, y: 0.2, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 839388166}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &619394800
 GameObject:
@@ -433,6 +495,8 @@ Transform:
   m_Children:
   - {fileID: 1346401328}
   - {fileID: 960067409}
+  - {fileID: 596656528}
+  - {fileID: 512183534}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &839388167
@@ -460,10 +524,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e063fd463c7a8874ebb131f47b596962, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerFire
-  BulletPrefab: {fileID: 8143422840005830835, guid: cf226dc49a995084eabe32e2114a6ef8, type: 3}
+  DefaultBulletPrefab: {fileID: 8143422840005830835, guid: cf226dc49a995084eabe32e2114a6ef8, type: 3}
+  WeakBulletPrefab: {fileID: 8440766255500913173, guid: 9c39f3ffc98b1284cade5be34276c35f, type: 3}
   LeftFirePoint: {fileID: 1346401328}
   RightFirePoint: {fileID: 960067409}
+  LeftWeakFirePoint: {fileID: 596656528}
+  RightWeakFirePoint: {fileID: 512183534}
   AttackCoolDown: 0.3
+  IsAutoFire: 0
 --- !u!1 &960067408
 GameObject:
   m_ObjectHideFlags: 0

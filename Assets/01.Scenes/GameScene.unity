@@ -463,6 +463,7 @@ MonoBehaviour:
   BulletPrefab: {fileID: 8143422840005830835, guid: cf226dc49a995084eabe32e2114a6ef8, type: 3}
   LeftFirePoint: {fileID: 1346401328}
   RightFirePoint: {fileID: 960067409}
+  AttackCoolDown: 0.3
 --- !u!1 &960067408
 GameObject:
   m_ObjectHideFlags: 0

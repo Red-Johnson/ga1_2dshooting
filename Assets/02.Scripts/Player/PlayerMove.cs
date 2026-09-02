@@ -26,7 +26,7 @@ public class PlayerMove : MonoBehaviour
         
         // 2. 키보드 입력에 따라 방향을 구한다.
         // 게임에는 벡터라는 위치 자료형이 있다. 벡터는 크기, 방향을 의미한다.
-        Vector2 direction = new Vector2(h, v); // 왼쪽 방향
+        Vector2 direction = new Vector2(h, v); // 상하좌우 방향
         // = Vector2 direction = Vector2.left;
 
         // 3. 방향과 속력에 따라 이동한다.
@@ -51,8 +51,6 @@ public class PlayerMove : MonoBehaviour
             pos.x = _leftMoveLimit;
         }
         
-        transform.position = pos;
-        
         // 상, 하 이동 가능 경계
         if (pos.y < _downMoveLimit)
         {
@@ -68,11 +66,11 @@ public class PlayerMove : MonoBehaviour
         // "E" 키로 속도 증가, "Q" 키로 속도 감소
         if (Input.GetKey(KeyCode.E))
         {
-            Speed += 0.01f;
+            Speed += 0.01f * Time.deltaTime;
         }
         else if (Input.GetKey(KeyCode.Q))
         {
-            Speed -= 0.01f;
+            Speed -= 0.01f * Time.deltaTime;
         }
         
         

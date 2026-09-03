@@ -48,8 +48,6 @@ public class PlayerFire : MonoBehaviour
             leftDefaultBullet.transform.position = LeftFirePoint.position; // 생성한 총알의 위치를 FirePoint의 위치로
             leftWeakBullet.transform.position = LeftWeakFirePoint.position; // 생성한 총알의 위치를 FirePoint의 위치로
             
-            
-            
             GameObject rightDefaultBullet = Instantiate(DefaultBulletPrefab);
             GameObject rightWeakBullet = Instantiate(WeakBulletPrefab);
             rightDefaultBullet.transform.position = RightFirePoint.position; // 생성한 총알의 위치를 FirePoint의 위치로

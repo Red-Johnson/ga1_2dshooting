@@ -7,39 +7,35 @@ public class PlayerFire : MonoBehaviour
     // - 총알 프리팹
     public GameObject DefaultBulletPrefab;
     public GameObject WeakBulletPrefab;
-    
+
     public Transform LeftFirePoint;
     public Transform RightFirePoint;
     public Transform LeftWeakFirePoint;
     public Transform RightWeakFirePoint;
 
     public float AttackCoolDown;
-    private float CurrentCoolDown;
+    private float _currentCoolDown;
 
     public bool IsAutoFire = false;
-    
+
     private void Update()
     {
-        
-        if (CurrentCoolDown > 0)
+        if (_currentCoolDown > 0)
         {
-            CurrentCoolDown -= Time.deltaTime;
+            _currentCoolDown -= Time.deltaTime;
         }
 
         if (IsAutoFire == false && Input.GetKeyDown(KeyCode.Space))
         {
             Fire();
         }
-        
-        AutoFire();
-        
 
+        AutoFire();
     }
 
     private void Fire()
     {
-        
-        if (CurrentCoolDown <= 0)
+        if (_currentCoolDown <= 0)
         {
             // 총알 프리팹을 생성한다.
             // Instantiate는 프리팹을 복사해서 게임 오브젝트를 생성하고 씬에 넣어주는 기능
@@ -47,16 +43,14 @@ public class PlayerFire : MonoBehaviour
             GameObject leftWeakBullet = Instantiate(WeakBulletPrefab);
             leftDefaultBullet.transform.position = LeftFirePoint.position; // 생성한 총알의 위치를 FirePoint의 위치로
             leftWeakBullet.transform.position = LeftWeakFirePoint.position; // 생성한 총알의 위치를 FirePoint의 위치로
-            
+
             GameObject rightDefaultBullet = Instantiate(DefaultBulletPrefab);
             GameObject rightWeakBullet = Instantiate(WeakBulletPrefab);
             rightDefaultBullet.transform.position = RightFirePoint.position; // 생성한 총알의 위치를 FirePoint의 위치로
             rightWeakBullet.transform.position = RightWeakFirePoint.position; // 생성한 총알의 위치를 FirePoint의 위치로
-            
-            CurrentCoolDown = AttackCoolDown;
+
+            _currentCoolDown = AttackCoolDown;
         }
-            
-            
     }
 
     private void AutoFire()

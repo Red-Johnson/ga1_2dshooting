@@ -5,6 +5,7 @@ public class BulletMove : MonoBehaviour
     // 목적: 총알을 위로 움직이고 싶다.
     public float Speed;
 
+
     private void Start()
     {
     }

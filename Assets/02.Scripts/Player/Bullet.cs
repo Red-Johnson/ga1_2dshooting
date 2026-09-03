@@ -4,7 +4,7 @@ public class Bullet : MonoBehaviour
 {
     // 목적: 총알을 위로 움직이고 싶다.
     public float Speed;
-    public float Damage = 50;
+    public float Damage;
 
     private void Start()
     {

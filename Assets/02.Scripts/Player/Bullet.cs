@@ -20,6 +20,9 @@ public class Bullet : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         Enemy enemy = other.gameObject.GetComponent<Enemy>();
+        enemy.TakeDamage(Damage);
+
+        Destroy(this.gameObject);
     }
 
     // 충돌 관련 이벤트 (Enter -> Stay -> Exit)

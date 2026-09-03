@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8812253583134961610}
   - component: {fileID: 2712913515355217428}
   - component: {fileID: 7887090945585708163}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: WeakBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -105,3 +105,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BulletMove
   Speed: 10
+  Damage: 50

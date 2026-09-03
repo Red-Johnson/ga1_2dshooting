@@ -19,6 +19,7 @@ public class Bullet : MonoBehaviour
     // 트리거 관련 이벤트
     private void OnTriggerEnter2D(Collider2D other)
     {
+        // GetComponent<타입>() -> 게임 오브젝트가 가지고 있는 컴포넌트를 참조
         Enemy enemy = other.gameObject.GetComponent<Enemy>();
         enemy.TakeDamage(Damage);
 
@@ -33,9 +34,6 @@ public class Bullet : MonoBehaviour
         // 충돌한 대상이 Enemy일 때만 서로를파괴한다!
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            // GetComponent<타입>() -> 게임 오브젝트가 가지고 있는 컴포넌트를 참조
-
-
             // 응집도는 높히고, 결합도는 낮춰라
             // 결합도란 묻는 것... 매번 묻는 것 ex) 너 체력 몇이니? 너 체력 몇이니? 너 체력 몇이니?...
             // 무적모드 검사하고

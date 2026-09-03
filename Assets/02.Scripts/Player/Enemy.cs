@@ -1,17 +1,30 @@
 using UnityEngine;
 
 
-public class Enemy : MonoBehaviour
+public abstract class Enemy : MonoBehaviour
 {
-    public float MoveSpeed;
-    public float Health = 100;
+    [SerializeField] protected float _moveSpeed = 3;
+    [SerializeField] protected int _health = 100;
 
     private void Start()
     {
     }
 
-    private void Update()
+
+    public void Update()
     {
-        transform.Translate(Vector2.down * MoveSpeed * Time.deltaTime);
+        Move();
+    }
+
+    protected abstract void Move();
+
+    public void TakeDamage(int damage)
+    {
+        _health -= damage;
+        if (_health <= 0)
+        {
+            // Enemy 파괴
+            Destroy(gameObject);
+        }
     }
 }

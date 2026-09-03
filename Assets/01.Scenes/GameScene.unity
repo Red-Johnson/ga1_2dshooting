@@ -331,7 +331,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2ea4d219affd4a48862e2aaae7d9321, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemySpawner
-  EnemyPrefab: {fileID: 3761834622851471232, guid: d57ebc9ae33ac4a499cd899612464d8b, type: 3}
+  EnemyPrefab: {fileID: 6499008610031999171, guid: 74e84e9338cd0794fbaae4a0955792ea, type: 3}
 --- !u!1 &596656527
 GameObject:
   m_ObjectHideFlags: 0
@@ -463,7 +463,7 @@ GameObject:
   - component: {fileID: 839388170}
   m_Layer: 6
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -807,7 +807,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2ea4d219affd4a48862e2aaae7d9321, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemySpawner
-  EnemyPrefab: {fileID: 3761834622851471232, guid: d57ebc9ae33ac4a499cd899612464d8b, type: 3}
+  EnemyPrefab: {fileID: 153439305903778665, guid: d6141f96fc9eb244d8dc45904802c433, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

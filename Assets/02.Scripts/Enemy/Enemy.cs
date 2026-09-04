@@ -29,7 +29,14 @@ public abstract class Enemy : MonoBehaviour
     {
         Player health = other.gameObject.GetComponent<Player>();
 
-        if (health != null)
+        if (health == null)
+        {
+            Debug.Log($"[주의] 플레이어 찾을 수 없음");
+
+            return;
+        }
+
+        else if (health != null)
         {
             health.TakeDamage(Damage);
 

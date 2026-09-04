@@ -606,7 +606,7 @@ MonoBehaviour:
   RightFirePoint: {fileID: 960067409}
   LeftWeakFirePoint: {fileID: 596656528}
   RightWeakFirePoint: {fileID: 512183534}
-  AttackCoolDown: 0.3
+  AttackCoolDown: 0.5
   IsAutoFire: 0
 --- !u!60 &839388169
 PolygonCollider2D:

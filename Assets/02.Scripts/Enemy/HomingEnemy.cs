@@ -4,6 +4,15 @@ public class HomingEnemy : Enemy
 {
     private Transform _playerTransform;
 
+    private void Start()
+    {
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+
+        if (player != null)
+        {
+            _playerTransform = player.transform;
+        }
+    }
 
     protected override void Move()
     {
@@ -19,15 +28,5 @@ public class HomingEnemy : Enemy
         transform.rotation = Quaternion.Euler(0, 0, angle + 90);
 
         transform.Translate(targetDirection * _moveSpeed * Time.deltaTime, Space.World);
-    }
-
-    private void Start()
-    {
-        GameObject player = GameObject.FindGameObjectWithTag("Player");
-
-        if (player != null)
-        {
-            _playerTransform = player.GetComponent<Transform>();
-        }
     }
 }

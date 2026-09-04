@@ -39,15 +39,15 @@ public class PlayerFire : MonoBehaviour
         {
             // 총알 프리팹을 생성한다.
             // Instantiate는 프리팹을 복사해서 게임 오브젝트를 생성하고 씬에 넣어주는 기능
-            GameObject leftDefaultBullet = Instantiate(DefaultBulletPrefab);
-            GameObject leftWeakBullet = Instantiate(WeakBulletPrefab);
-            leftDefaultBullet.transform.position = LeftFirePoint.position; // 생성한 총알의 위치를 FirePoint의 위치로
-            leftWeakBullet.transform.position = LeftWeakFirePoint.position; // 생성한 총알의 위치를 FirePoint의 위치로
+            GameObject leftDefaultBullet =
+                Instantiate(DefaultBulletPrefab, LeftFirePoint.position, Quaternion.identity);
+            GameObject leftWeakBullet = Instantiate(WeakBulletPrefab, LeftWeakFirePoint.position, Quaternion.identity);
+            // 게임 오브젝트 생성과 동시에 위치, 회전 값 지정!
 
-            GameObject rightDefaultBullet = Instantiate(DefaultBulletPrefab);
-            GameObject rightWeakBullet = Instantiate(WeakBulletPrefab);
-            rightDefaultBullet.transform.position = RightFirePoint.position; // 생성한 총알의 위치를 FirePoint의 위치로
-            rightWeakBullet.transform.position = RightWeakFirePoint.position; // 생성한 총알의 위치를 FirePoint의 위치로
+            GameObject rightDefaultBullet =
+                Instantiate(DefaultBulletPrefab, RightFirePoint.position, Quaternion.identity);
+            GameObject rightWeakBullet =
+                Instantiate(WeakBulletPrefab, RightWeakFirePoint.position, Quaternion.identity);
 
             _currentCoolDown = AttackCoolDown;
         }
@@ -58,11 +58,19 @@ public class PlayerFire : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             IsAutoFire = !IsAutoFire;
+
+            if (IsAutoFire)
+            {
+                Debug.Log("자동 발사 모드 ON");
+            }
+            else
+            {
+                Debug.Log("자동 발사 모드 OFF");
+            }
         }
 
         if (IsAutoFire == true)
         {
-            Debug.Log("자동 발사 모드 실행중...");
             Fire();
         }
     }

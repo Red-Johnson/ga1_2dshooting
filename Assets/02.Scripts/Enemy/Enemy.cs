@@ -6,10 +6,6 @@ public abstract class Enemy : MonoBehaviour
     [SerializeField] protected float _moveSpeed = 3;
     [SerializeField] protected int _health = 100;
 
-    private void Start()
-    {
-    }
-
 
     public void Update()
     {

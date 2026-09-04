@@ -6,9 +6,6 @@ public class Bullet : MonoBehaviour
     public float Speed;
     public int Damage;
 
-    private void Start()
-    {
-    }
 
     private void Update()
     {
@@ -21,7 +18,11 @@ public class Bullet : MonoBehaviour
     {
         // GetComponent<타입>() -> 게임 오브젝트가 가지고 있는 컴포넌트를 참조
         Enemy enemy = other.gameObject.GetComponent<Enemy>();
-        enemy.TakeDamage(Damage);
+        if (enemy != null)
+        {
+            enemy.TakeDamage(Damage);
+        }
+
 
         Destroy(this.gameObject);
     }

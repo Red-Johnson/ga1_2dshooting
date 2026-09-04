@@ -9,7 +9,9 @@ public class EnemySpawner : MonoBehaviour
     private float _timer;
 
     // 생성할 프리팹
-    [SerializeField] private Enemy _enemyPrefab;
+    [SerializeField] private Enemy _downEnemyPrefab;
+    [SerializeField] private Enemy _aimedEnemyPrefab;
+    [SerializeField] private Enemy _homingEnemyPrefab;
 
     private void Update()
     {
@@ -28,7 +30,23 @@ public class EnemySpawner : MonoBehaviour
 
     private void Spawn()
     {
-        Enemy enemy = Instantiate(_enemyPrefab);
-        enemy.transform.position = transform.position;
+        int randomPercent = Random.Range(1, 101);
+
+        Enemy enemyToSpawn = null;
+
+        if (randomPercent <= 50)
+        {
+            enemyToSpawn = _downEnemyPrefab;
+        }
+        else if (randomPercent <= 80)
+        {
+            enemyToSpawn = _aimedEnemyPrefab;
+        }
+        else if (randomPercent <= 101)
+        {
+            enemyToSpawn = _homingEnemyPrefab;
+        }
+
+        Instantiate(enemyToSpawn, transform.position, Quaternion.identity);
     }
 }

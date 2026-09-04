@@ -27,11 +27,11 @@ public abstract class Enemy : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        PlayerHealth playerHealth = other.gameObject.GetComponent<PlayerHealth>();
+        Player health = other.gameObject.GetComponent<Player>();
 
-        if (playerHealth != null)
+        if (health != null)
         {
-            playerHealth.TakeDamage(Damage);
+            health.TakeDamage(Damage);
 
             Destroy(this.gameObject);
         }

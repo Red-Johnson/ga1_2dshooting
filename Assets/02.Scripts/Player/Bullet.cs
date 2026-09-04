@@ -53,9 +53,4 @@ public class Bullet : MonoBehaviour
             // 이걸 Enemy로 옮겨서 굳이 물어볼 필요가 없게!
         }
     }
-
-    private void OnCollisionStay2D(Collision2D collision)
-    {
-        Debug.Log($"충돌중이다...!");
-    }
 }

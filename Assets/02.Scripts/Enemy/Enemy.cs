@@ -26,7 +26,7 @@ public abstract class Enemy : MonoBehaviour
         {
             int randomDropPercent = Random.Range(1, 101);
             int randomItemPercent = Random.Range(1, 91);
-
+            
             Item itemToSpawn = null;
 
             if (randomDropPercent <= 30)

@@ -45,8 +45,11 @@ public abstract class Enemy : MonoBehaviour
                 }
             }
 
-
-            Instantiate(itemToSpawn, transform.position, Quaternion.identity);
+            if (itemToSpawn != null)
+            {
+                Instantiate(itemToSpawn, transform.position, Quaternion.identity);
+            }
+            
 
             // Enemy 파괴
             Destroy(this.gameObject);

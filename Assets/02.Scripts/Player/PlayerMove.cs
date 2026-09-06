@@ -18,22 +18,9 @@ public class PlayerMove : MonoBehaviour
     private void Update()
     {
         Move();
-
-        SpeedChange();
+        
     }
-
-    private void SpeedChange()
-    {
-        // "E" 키로 속도 증가, "Q" 키로 속도 감소
-        if (Input.GetKey(KeyCode.E))
-        {
-            Speed += 0.01f * Time.deltaTime;
-        }
-        else if (Input.GetKey(KeyCode.Q))
-        {
-            Speed -= 0.01f * Time.deltaTime;
-        }
-    }
+    
 
     private void Move()
     {

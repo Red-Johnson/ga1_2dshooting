@@ -109,6 +109,9 @@ MonoBehaviour:
   _moveSpeed: 3
   _health: 100
   Damage: 10
+  _attackSpeedUpItem: {fileID: 0}
+  _healthUpItem: {fileID: 0}
+  _moveSpeedUpItem: {fileID: 0}
 --- !u!61 &2252549673695509386
 BoxCollider2D:
   m_ObjectHideFlags: 0

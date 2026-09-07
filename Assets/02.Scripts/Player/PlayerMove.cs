@@ -6,11 +6,20 @@ public class PlayerMove : MonoBehaviour
     // 목적: 키보드 입력에 따라서 플레이어 이동 처리를 하고 싶다.
 
     // 필요 필드 :
+    private Animator _animator;
+
     public float Speed;
     private float _leftMoveLimit = -2.86f;
     private float _rightMoveLimit = 2.86f;
     private float _upMoveLimit = -0.56f;
     private float _downMoveLimit = -5.00f;
+
+    // 객체가 생성될 때 한 번 실행한다.
+    private void Awake()
+    {
+        // 애니메이터 컴포넌트에 대한 참조를 가져와 할당한다.
+        _animator = GetComponent<Animator>();
+    }
 
     // Update() 함수는 매 프레임마다 실행된다.
     // 초당 프레임 횟수는 따로 설정하지 않으면 컴퓨터 성능에 따라 다르다.
@@ -30,6 +39,8 @@ public class PlayerMove : MonoBehaviour
         // 게임에는 벡터라는 위치 자료형이 있다. 벡터는 크기, 방향을 의미한다.
         Vector2 direction = new Vector2(h, v); // 상하좌우 방향
         // = Vector2 direction = Vector2.left;
+
+        _animator.SetInteger("x", (int)direction.x);
 
         // 3. 방향과 속력에 따라 이동한다.
         //  속도 = 방향 * 속력

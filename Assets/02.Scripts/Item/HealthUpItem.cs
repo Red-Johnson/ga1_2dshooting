@@ -4,7 +4,6 @@ public class HealthUpItem : Item
 {
     protected override void Effect(GameObject targetPlayer)
     {
-
         if (targetPlayer.TryGetComponent<Player>(out Player healthScript))
         {
             if (healthScript._health < 100)
@@ -17,11 +16,9 @@ public class HealthUpItem : Item
                 {
                     healthScript._health += 10;
                 }
-                
+
                 Debug.Log($"[체력 회복]");
-                
             }
         }
-        
     }
 }

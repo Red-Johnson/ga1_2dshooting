@@ -16,14 +16,9 @@ public class AttackSpeedUpItem : Item
                 {
                     fireScript.AttackCoolDown -= 0.1f;
                 }
-                
-            
+
                 Debug.Log($"[공격속도 증가]");
             }
-            
         }
     }
-
-
-
 }

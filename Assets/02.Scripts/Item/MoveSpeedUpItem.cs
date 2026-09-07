@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class MoveSpeedUpItem : Item
 {
-
     protected override void Effect(GameObject targetPlayer)
     {
         if (targetPlayer.TryGetComponent<PlayerMove>(out PlayerMove moveScript))
@@ -17,11 +16,9 @@ public class MoveSpeedUpItem : Item
                 {
                     moveScript.Speed += 0.5f;
                 }
-                
+
                 Debug.Log($"[이동속도 증가]");
-                
             }
         }
     }
-    
 }

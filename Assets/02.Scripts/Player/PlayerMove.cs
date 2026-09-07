@@ -12,15 +12,12 @@ public class PlayerMove : MonoBehaviour
     private float _upMoveLimit = -0.56f;
     private float _downMoveLimit = -5.00f;
 
-
     // Update() 함수는 매 프레임마다 실행된다.
     // 초당 프레임 횟수는 따로 설정하지 않으면 컴퓨터 성능에 따라 다르다.
     private void Update()
     {
         Move();
-        
     }
-    
 
     private void Move()
     {
@@ -37,7 +34,7 @@ public class PlayerMove : MonoBehaviour
         // 3. 방향과 속력에 따라 이동한다.
         //  속도 = 방향 * 속력
         Vector2 fixedDirection = direction.normalized; // 벡터의 길이를 1로 균일화 (대각선 속도 증가 방지)
-        transform.Translate(fixedDirection * Speed * Time.deltaTime); // 매직넘버: 보는 사람에 따라 의미가 달라질 수 있는 애매한 숫자 (0.05f처럼) 
+        transform.Translate(fixedDirection * Speed * Time.deltaTime); // 매직넘버: 보는 사람에 따라 의미가 달라질 수 있는 애매한 숫자 (0.05f처럼)
         // deltaTime: 이전 프레임으로부터 지금 프레임까지 시간이 얼마나 지났는지 MS로 반환
 
         // 새로운 위치 = 현재 위치 + (방향 * 속력 * 시간)

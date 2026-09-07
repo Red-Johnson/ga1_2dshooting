@@ -36,11 +36,8 @@ public abstract class Item : MonoBehaviour
 
             transform.Translate(targetDirection * _moveSpeed * Time.deltaTime);
         }
-        
-
     }
-    
-    
+
     protected abstract void Effect(GameObject targetPlayer);
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -51,6 +48,5 @@ public abstract class Item : MonoBehaviour
 
             Destroy(this.gameObject);
         }
-        
     }
 }

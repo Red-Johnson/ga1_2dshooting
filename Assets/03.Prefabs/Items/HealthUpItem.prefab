@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 4725177372497323470}
   - component: {fileID: 6292243784132874760}
   - component: {fileID: 5907897767334802517}
-  m_Layer: 0
+  - component: {fileID: 7282805591370169764}
+  m_Layer: 9
   m_Name: HealthUpItem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -150,7 +151,7 @@ PolygonCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -173,3 +174,17 @@ PolygonCollider2D:
       - {x: 0.5, y: 0}
       - {x: 0.25, y: 0.43359375}
   m_UseDelaunayMesh: 1
+--- !u!114 &7282805591370169764
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4833183685985995399}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc624ce92f21afa49bf281789ac32b12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HealthUpItem
+  _moveSpeed: 3
+  _delayTime: 1.5

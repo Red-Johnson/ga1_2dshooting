@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2856633754499736701}
   - component: {fileID: 7278370256125543116}
   - component: {fileID: 6117984142343457908}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: AttackSpeedUpItem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -151,7 +151,7 @@ PolygonCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -185,4 +185,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AttackSpeedUpItem
   _moveSpeed: 3
-  _delayTime: 0
+  _delayTime: 1.5

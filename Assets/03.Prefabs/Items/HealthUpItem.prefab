@@ -186,5 +186,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc624ce92f21afa49bf281789ac32b12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HealthUpItem
-  _moveSpeed: 3
+  _moveSpeed: 10
   _delayTime: 1.5

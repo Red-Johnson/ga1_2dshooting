@@ -2,7 +2,7 @@ using UnityEngine;
 
 public abstract class Item : MonoBehaviour
 {
-    [SerializeField] protected float _moveSpeed = 3f;
+    [SerializeField] protected float _moveSpeed = 10f;
     [SerializeField] private float _delayTime = 1.5f;
 
     private float _timer;

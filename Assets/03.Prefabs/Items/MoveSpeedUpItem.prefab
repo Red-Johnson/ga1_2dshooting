@@ -186,5 +186,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48d03500c6230a5429402370c0785e33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MoveSpeedUpItem
-  _moveSpeed: 3
+  _moveSpeed: 10
   _delayTime: 1.5

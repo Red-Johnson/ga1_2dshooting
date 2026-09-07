@@ -184,5 +184,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ae277767462f384086eda9af3095b15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AttackSpeedUpItem
-  _moveSpeed: 3
+  _moveSpeed: 10
   _delayTime: 1.5

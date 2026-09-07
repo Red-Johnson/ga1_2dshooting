@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: -2028410667644436690}
   - component: {fileID: -4628311794070535153}
   - component: {fileID: -511616946685982748}
+  - component: {fileID: 6033685677238648457}
   m_Layer: 8
   m_Name: DownEnemy
   m_TagString: Enemy
@@ -189,3 +190,25 @@ MonoBehaviour:
   _attackSpeedUpItem: {fileID: 6117984142343457908, guid: 6f5b4d545d006654a9ec66d05228d48f, type: 3}
   _healthUpItem: {fileID: 7282805591370169764, guid: 04bcb3343a6733141b6cba10a5c8544a, type: 3}
   _moveSpeedUpItem: {fileID: -9147648705940169553, guid: e854ae8752a460c42917e49ed8586bf6, type: 3}
+--- !u!95 &6033685677238648457
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6499008610031999171}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3ffb7de1167b3334089376a54f6ef63c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

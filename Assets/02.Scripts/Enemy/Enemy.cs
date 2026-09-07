@@ -12,6 +12,13 @@ public abstract class Enemy : MonoBehaviour
     [SerializeField] private Item _healthUpItem;
     [SerializeField] private Item _moveSpeedUpItem;
 
+    private Animator _animator;
+
+    private void Awake()
+    {
+        _animator = GetComponent<Animator>();
+    }
+
     public void Update()
     {
         Move();
@@ -22,6 +29,8 @@ public abstract class Enemy : MonoBehaviour
     public void TakeDamage(int damage)
     {
         _health -= damage;
+        _animator.SetTrigger("doHit");
+
         if (_health <= 0)
         {
             int randomDropPercent = Random.Range(1, 101);
@@ -51,7 +60,7 @@ public abstract class Enemy : MonoBehaviour
             }
 
             // Enemy 파괴
-            Destroy(this.gameObject);
+            Destroy(this.gameObject, 0.2f);
 
             // 일정 확률로 Item 생성
         }

@@ -6,6 +6,7 @@ public abstract class Enemy : MonoBehaviour
     [SerializeField] protected float _moveSpeed = 3;
     [SerializeField] protected int _health = 100;
     public int Damage = 10;
+    private bool _isDead = false;
 
     // Enemy가 드랍하는 아이템 목록
     [SerializeField] private Item _attackSpeedUpItem;
@@ -21,6 +22,7 @@ public abstract class Enemy : MonoBehaviour
 
     public void Update()
     {
+        if (_isDead) return;
         Move();
     }
 
@@ -28,8 +30,15 @@ public abstract class Enemy : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
+        if (_isDead) return;
+
         _health -= damage;
-        _animator.SetTrigger("doHit");
+
+        if (_animator != null)
+        {
+            _animator.SetTrigger("doHit");
+        }
+
 
         if (_health <= 0)
         {
@@ -37,6 +46,13 @@ public abstract class Enemy : MonoBehaviour
             int randomItemPercent = Random.Range(1, 91);
 
             Item itemToSpawn = null;
+
+            _isDead = true;
+
+            if (TryGetComponent<Collider2D>(out var col))
+            {
+                col.enabled = false;
+            }
 
             if (randomDropPercent <= 30)
             {

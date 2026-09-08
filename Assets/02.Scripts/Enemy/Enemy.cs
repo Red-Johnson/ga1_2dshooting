@@ -15,6 +15,12 @@ public abstract class Enemy : MonoBehaviour
 
     private Animator _animator;
 
+    // - 생성할 아이템 프리팹들
+    [SerializeField] private Item[] _itemPrefabs;
+
+    // - 죽을 때 생성할 이펙트 프리팹
+    [SerializeField] private GameObject _deathEffectPrefab;
+
     private void Awake()
     {
         _animator = GetComponent<Animator>();
@@ -78,8 +84,15 @@ public abstract class Enemy : MonoBehaviour
             // Enemy 파괴
             Destroy(this.gameObject, 0.2f);
 
+            SpawnDeathEffect();
+
             // 일정 확률로 Item 생성
         }
+    }
+
+    private void SpawnDeathEffect()
+    {
+        Instantiate(_deathEffectPrefab, transform.position, Quaternion.identity);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -89,6 +102,7 @@ public abstract class Enemy : MonoBehaviour
         if (health != null)
         {
             health.TakeDamage(Damage);
+
 
             Destroy(this.gameObject);
         }

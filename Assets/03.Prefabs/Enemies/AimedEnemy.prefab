@@ -113,6 +113,8 @@ MonoBehaviour:
   _attackSpeedUpItem: {fileID: 6117984142343457908, guid: 6f5b4d545d006654a9ec66d05228d48f, type: 3}
   _healthUpItem: {fileID: 7282805591370169764, guid: 04bcb3343a6733141b6cba10a5c8544a, type: 3}
   _moveSpeedUpItem: {fileID: -9147648705940169553, guid: e854ae8752a460c42917e49ed8586bf6, type: 3}
+  _itemPrefabs: []
+  _deathEffectPrefab: {fileID: 2433282508537954060, guid: 3ef3ae421f71c5c4e97fe12dc2fc6312, type: 3}
 --- !u!50 &4098690906859028271
 Rigidbody2D:
   serializedVersion: 5

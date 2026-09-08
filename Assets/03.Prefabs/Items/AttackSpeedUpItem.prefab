@@ -136,7 +136,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AttackSpeedUpItem
   _moveSpeed: 10
   _delayTime: 1.5
-  _LootEffect: {fileID: 5824670795371433373, guid: f6fd568b816c64943a44efc3add3a881, type: 3}
+  _lootEffect: {fileID: 2360655870356088562, guid: 57a776ff377f3c44e8403e2067a4d41f, type: 3}
 --- !u!95 &6990041716953138533
 Animator:
   serializedVersion: 7

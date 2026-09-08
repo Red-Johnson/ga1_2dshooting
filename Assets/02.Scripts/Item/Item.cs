@@ -5,6 +5,8 @@ public abstract class Item : MonoBehaviour
     [SerializeField] protected float _moveSpeed = 10f;
     [SerializeField] private float _delayTime = 1.5f;
 
+    [SerializeField] private GameObject _lootEffect;
+
     private float _timer;
     private Transform _playerTransform;
 
@@ -46,7 +48,14 @@ public abstract class Item : MonoBehaviour
         {
             Effect(other.gameObject);
 
+            SpawnLootEffect();
+
             Destroy(this.gameObject);
         }
+    }
+
+    private void SpawnLootEffect()
+    {
+        Instantiate(_lootEffect, transform.position, Quaternion.identity);
     }
 }

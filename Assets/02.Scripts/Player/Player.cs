@@ -23,6 +23,7 @@ public class Player : MonoBehaviour
         return _health;
     }
 
+    [SerializeField] private GameObject _deathEffectPrefab;
 
     public void TakeDamage(int damage)
     {
@@ -32,8 +33,14 @@ public class Player : MonoBehaviour
 
         if (_health <= 0)
         {
+            SpawnDeathEffect();
             Destroy(this.gameObject);
         }
+    }
+
+    private void SpawnDeathEffect()
+    {
+        Instantiate(_deathEffectPrefab, transform.position, Quaternion.identity);
     }
 
     public void Heal()

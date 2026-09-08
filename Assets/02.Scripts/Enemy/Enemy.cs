@@ -103,6 +103,7 @@ public abstract class Enemy : MonoBehaviour
         {
             health.TakeDamage(Damage);
 
+            SpawnDeathEffect();
 
             Destroy(this.gameObject);
         }

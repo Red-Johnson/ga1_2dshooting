@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 8591753828829904599}
   - component: {fileID: 4725177372497323470}
   - component: {fileID: 6292243784132874760}
-  - component: {fileID: 5907897767334802517}
   - component: {fileID: 7282805591370169764}
   - component: {fileID: 8734967884145363554}
+  - component: {fileID: 1221237624673235945}
   m_Layer: 9
   m_Name: HealthUpItem
   m_TagString: Item
@@ -122,7 +122,43 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!60 &5907897767334802517
+--- !u!114 &7282805591370169764
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4833183685985995399}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc624ce92f21afa49bf281789ac32b12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HealthUpItem
+  _moveSpeed: 10
+  _delayTime: 1.5
+--- !u!95 &8734967884145363554
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4833183685985995399}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: eaaac653048d6644cb6bffcd11f572cb, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!60 &1221237624673235945
 PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -168,46 +204,9 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -0.25, y: 0.43359375}
-      - {x: -0.5, y: 0}
-      - {x: -0.25, y: -0.43359375}
-      - {x: 0.25, y: -0.43359375}
-      - {x: 0.5, y: 0}
-      - {x: 0.25, y: 0.43359375}
+    - - {x: -0.065, y: 0.08}
+      - {x: -0.065, y: -0.07}
+      - {x: -0.055, y: -0.08}
+      - {x: 0.065, y: -0.08}
+      - {x: 0.065, y: 0.08}
   m_UseDelaunayMesh: 1
---- !u!114 &7282805591370169764
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4833183685985995399}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc624ce92f21afa49bf281789ac32b12, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::HealthUpItem
-  _moveSpeed: 10
-  _delayTime: 1.5
---- !u!95 &8734967884145363554
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4833183685985995399}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: eaaac653048d6644cb6bffcd11f572cb, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0

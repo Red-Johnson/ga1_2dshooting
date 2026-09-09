@@ -1676,6 +1676,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1385406347}
   - component: {fileID: 1385406348}
+  - component: {fileID: 1385406349}
   m_Layer: 0
   m_Name: Backgrounds_1
   m_TagString: Untagged
@@ -1724,7 +1725,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 0c5584b74031a44498352cc26bc42859, type: 2}
+  - {fileID: 2100000, guid: a79886f4c1f47144f84bf63440c3ca1c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1757,6 +1758,20 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!114 &1385406349
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1385406346}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3917b4d6ccf0bf5429c14aa047a9bf49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BackgroundScroll1
+  BgMaterial: {fileID: 2100000, guid: a79886f4c1f47144f84bf63440c3ca1c, type: 2}
+  ScrollSpeed: 0.2
 --- !u!1 &1516062397
 GameObject:
   m_ObjectHideFlags: 0
@@ -1766,7 +1781,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1516062398}
-  - component: {fileID: 1516062399}
   m_Layer: 0
   m_Name: Backgrounds
   m_TagString: Untagged
@@ -1792,20 +1806,6 @@ Transform:
   - {fileID: 1738284308}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1516062399
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1516062397}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d80bc53ac8d2f594389edfc1e48fe6fc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::BackgroundScroll
-  BgMaterial: {fileID: 2100000, guid: 0c5584b74031a44498352cc26bc42859, type: 2}
-  ScrollSpeed: 0.2
 --- !u!1 &1610541297
 GameObject:
   m_ObjectHideFlags: 0
@@ -1816,6 +1816,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1610541299}
   - component: {fileID: 1610541298}
+  - component: {fileID: 1610541300}
   m_Layer: 0
   m_Name: Backgrounds_0
   m_TagString: Untagged
@@ -1849,7 +1850,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 0c5584b74031a44498352cc26bc42859, type: 2}
+  - {fileID: 2100000, guid: 5f08c44f4f629d244b2f553baf906347, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1897,6 +1898,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1516062398}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1610541300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1610541297}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d80bc53ac8d2f594389edfc1e48fe6fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BackgroundScroll
+  BgMaterial: {fileID: 2100000, guid: 5f08c44f4f629d244b2f553baf906347, type: 2}
+  ScrollSpeed: 0.3
 --- !u!1001 &1634853895
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2021,6 +2036,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1738284308}
   - component: {fileID: 1738284309}
+  - component: {fileID: 1738284310}
   m_Layer: 0
   m_Name: Backgrounds_2
   m_TagString: Untagged
@@ -2102,6 +2118,20 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!114 &1738284310
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1738284307}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 187d3d964a4dc8e4a9174331bf55f46f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BackgroundScroll2
+  BgMaterial: {fileID: 2100000, guid: 0c5584b74031a44498352cc26bc42859, type: 2}
+  ScrollSpeed: 0.1
 --- !u!1 &1828303198
 GameObject:
   m_ObjectHideFlags: 0

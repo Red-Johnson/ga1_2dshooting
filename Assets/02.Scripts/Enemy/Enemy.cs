@@ -15,6 +15,9 @@ public abstract class Enemy : MonoBehaviour
 
     private Animator _animator;
 
+    // Todo: 에너미가 공격당할 때 재생시키는 피격 사운드
+    private AudioSource _damagedAudioSource;
+
     // - 생성할 아이템 프리팹들
     [SerializeField] private Item[] _itemPrefabs;
 
@@ -24,6 +27,7 @@ public abstract class Enemy : MonoBehaviour
     private void Awake()
     {
         _animator = GetComponent<Animator>();
+        _damagedAudioSource = GetComponent<AudioSource>();
     }
 
     public void Update()
@@ -85,6 +89,7 @@ public abstract class Enemy : MonoBehaviour
             Destroy(this.gameObject, 0.2f);
 
             SpawnDeathEffect();
+
 
             // 일정 확률로 Item 생성
         }

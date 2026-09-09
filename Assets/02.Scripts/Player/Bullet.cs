@@ -21,10 +21,8 @@ public class Bullet : MonoBehaviour
         if (enemy != null)
         {
             enemy.TakeDamage(Damage);
+            Destroy(this.gameObject);
         }
-
-
-        Destroy(this.gameObject);
     }
 
     // 충돌 관련 이벤트 (Enter -> Stay -> Exit)

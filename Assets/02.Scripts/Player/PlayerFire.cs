@@ -8,6 +8,13 @@ public class PlayerFire : MonoBehaviour
     public GameObject DefaultBulletPrefab;
     public GameObject WeakBulletPrefab;
 
+    // - 폭탄 프리팹
+    public GameObject BombPrefab;
+
+    // - 폭탄이 발사될 위치
+    public Transform BombFirePoint;
+
+
     public Transform LeftFirePoint;
     public Transform RightFirePoint;
     public Transform LeftWeakFirePoint;
@@ -15,6 +22,9 @@ public class PlayerFire : MonoBehaviour
 
     public float AttackCoolDown;
     private float _currentCoolDown;
+
+    public float BombCoolDown = 10f;
+    private float _currentBombCoolDown = 0f;
 
     public bool IsAutoFire = false;
 
@@ -25,9 +35,19 @@ public class PlayerFire : MonoBehaviour
             _currentCoolDown -= Time.deltaTime;
         }
 
+        if (_currentBombCoolDown > 0)
+        {
+            _currentBombCoolDown -= Time.deltaTime;
+        }
+
         if (IsAutoFire == false && Input.GetKeyDown(KeyCode.Space))
         {
             Fire();
+        }
+
+        if (Input.GetKeyDown(KeyCode.B))
+        {
+            BombFire();
         }
 
         AutoFire();
@@ -72,6 +92,15 @@ public class PlayerFire : MonoBehaviour
         if (IsAutoFire == true)
         {
             Fire();
+        }
+    }
+
+    private void BombFire()
+    {
+        if (_currentBombCoolDown <= 0)
+        {
+            Instantiate(BombPrefab, BombFirePoint.position, BombFirePoint.rotation);
+            _currentBombCoolDown = BombCoolDown;
         }
     }
 }

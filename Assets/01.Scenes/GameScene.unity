@@ -1254,11 +1254,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerFire
   DefaultBulletPrefab: {fileID: 8143422840005830835, guid: cf226dc49a995084eabe32e2114a6ef8, type: 3}
   WeakBulletPrefab: {fileID: 8440766255500913173, guid: 9c39f3ffc98b1284cade5be34276c35f, type: 3}
+  BombPrefab: {fileID: 5088538133559320109, guid: 7097015981fc5aa4b80ca55b5a744469, type: 3}
+  BombFirePoint: {fileID: 839388166}
   LeftFirePoint: {fileID: 1346401328}
   RightFirePoint: {fileID: 960067409}
   LeftWeakFirePoint: {fileID: 596656528}
   RightWeakFirePoint: {fileID: 512183534}
   AttackCoolDown: 0.8
+  BombCoolDown: 10
   IsAutoFire: 0
 --- !u!50 &839388170
 Rigidbody2D:

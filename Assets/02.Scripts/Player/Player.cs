@@ -24,7 +24,6 @@ public class Player : MonoBehaviour
     }
 
     [SerializeField] private GameObject _deathEffectPrefab;
-    [SerializeField] private GameObject _hitEffectPrefab;
 
     public void TakeDamage(int damage)
     {
@@ -37,10 +36,6 @@ public class Player : MonoBehaviour
             SpawnDeathEffect();
             Destroy(this.gameObject);
         }
-        else
-        {
-            SpawnHitEffect();
-        }
     }
 
     private void SpawnDeathEffect()
@@ -48,10 +43,6 @@ public class Player : MonoBehaviour
         Instantiate(_deathEffectPrefab, transform.position, Quaternion.identity);
     }
 
-    private void SpawnHitEffect()
-    {
-        Instantiate(_hitEffectPrefab, transform.position, Quaternion.identity);
-    }
 
     public void Heal()
     {

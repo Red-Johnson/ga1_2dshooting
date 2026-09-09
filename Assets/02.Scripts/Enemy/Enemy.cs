@@ -8,6 +8,7 @@ public abstract class Enemy : MonoBehaviour
     public int Damage = 10;
     private bool _isDead = false;
 
+
     // Enemy가 드랍하는 아이템 목록
     [SerializeField] private Item _attackSpeedUpItem;
     [SerializeField] private Item _healthUpItem;
@@ -16,6 +17,7 @@ public abstract class Enemy : MonoBehaviour
     private Animator _animator;
 
     // Todo: 에너미가 공격당할 때 재생시키는 피격 사운드
+    public AudioClip DamagedSound;
     private AudioSource _damagedAudioSource;
 
     // - 생성할 아이템 프리팹들
@@ -41,6 +43,11 @@ public abstract class Enemy : MonoBehaviour
     public void TakeDamage(int damage)
     {
         if (_isDead) return;
+
+        if (DamagedSound != null)
+        {
+            _damagedAudioSource.PlayOneShot(DamagedSound);
+        }
 
         _health -= damage;
 

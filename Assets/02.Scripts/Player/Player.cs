@@ -7,6 +7,10 @@ public class Player : MonoBehaviour
     // - 메서드를 통한 상태 변경
     [SerializeField] private int _health = 100;
 
+    public AudioClip DamagedSound;
+
+    private AudioSource _damagedAudioSource;
+
     public int Health
     {
         get { return _health; }
@@ -25,11 +29,21 @@ public class Player : MonoBehaviour
 
     [SerializeField] private GameObject _deathEffectPrefab;
 
+    private void Awake()
+    {
+        _damagedAudioSource = GetComponent<AudioSource>();
+    }
+
     public void TakeDamage(int damage)
     {
         _health -= damage;
 
         Debug.Log($"[현재 체력] : {_health}");
+
+        if (DamagedSound != null)
+        {
+            _damagedAudioSource.PlayOneShot(DamagedSound);
+        }
 
         if (_health <= 0)
         {

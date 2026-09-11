@@ -660,7 +660,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7dc303ccd8ab3f649b45a9e859e948f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BulletPool
-  _bulletPrefab: {fileID: 1965446108154260876, guid: cf226dc49a995084eabe32e2114a6ef8, type: 3}
+  _bulletPrefabs:
+  - {fileID: 1965446108154260876, guid: cf226dc49a995084eabe32e2114a6ef8, type: 3}
+  - {fileID: 7887090945585708163, guid: 9c39f3ffc98b1284cade5be34276c35f, type: 3}
   _poolSize: 50
 --- !u!1 &391380146
 GameObject:

@@ -62,16 +62,15 @@ public class PlayerFire : MonoBehaviour
 
             // Todo: 직접 생성이 아니라 총알 창고에서 총알을 꺼내야 함!
 
-            Bullet leftDefaultBullet = BulletPool.Instance.GetBullet();
+            Bullet leftDefaultBullet = BulletPool.Instance.GetBullet(BulletType.Default);
             leftDefaultBullet.transform.position = LeftFirePoint.position;
-
-            Bullet leftWeakBullet = BulletPool.Instance.GetBullet();
+            Bullet leftWeakBullet = BulletPool.Instance.GetBullet(BulletType.Weak);
             leftWeakBullet.transform.position = LeftWeakFirePoint.position;
-            // 게임 오브젝트 생성과 동시에 위치, 회전 값 지정!
 
-            Bullet rightDefaultBullet = BulletPool.Instance.GetBullet();
+
+            Bullet rightDefaultBullet = BulletPool.Instance.GetBullet(BulletType.Default);
             rightDefaultBullet.transform.position = RightFirePoint.position;
-            Bullet rightWeakBullet = BulletPool.Instance.GetBullet();
+            Bullet rightWeakBullet = BulletPool.Instance.GetBullet(BulletType.Weak);
             rightWeakBullet.transform.position = RightWeakFirePoint.position;
 
             _currentCoolDown = AttackCoolDown;

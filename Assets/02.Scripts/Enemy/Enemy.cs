@@ -5,6 +5,7 @@ public abstract class Enemy : MonoBehaviour
 {
     [SerializeField] protected float _moveSpeed = 3;
     [SerializeField] protected int _health = 100;
+
     public int Damage = 10;
     private bool _isDead = false;
 

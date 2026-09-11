@@ -8,10 +8,8 @@ public class EnemySpawner : MonoBehaviour
 
     private float _timer;
 
-    // 생성할 프리팹
-    [SerializeField] private Enemy _downEnemyPrefab;
-    [SerializeField] private Enemy _aimedEnemyPrefab;
-    [SerializeField] private Enemy _homingEnemyPrefab;
+    [SerializeField] private EnemySpawnDataTableSO _spawnDataTable;
+
 
     private void Update()
     {
@@ -32,21 +30,31 @@ public class EnemySpawner : MonoBehaviour
     {
         int randomPercent = Random.Range(1, 101);
 
-        Enemy enemyToSpawn = null;
 
-        if (randomPercent <= 50)
+        // 가중치 랜덤 선택
+        // 각 아이템에 가중치를 부여, 가중치가 클수록 높은 확률로 선택되도록 한다.
+
+        // 1. 추첨할 수 있는 모든 가중치를 더한다.
+        int totalWeight = 0;
+        foreach (EnemySpawnData data in _spawnDataTable.Datas)
         {
-            enemyToSpawn = _downEnemyPrefab;
-        }
-        else if (randomPercent <= 80)
-        {
-            enemyToSpawn = _aimedEnemyPrefab;
-        }
-        else if (randomPercent <= 101)
-        {
-            enemyToSpawn = _homingEnemyPrefab;
+            totalWeight += data.Weight;
         }
 
-        Instantiate(enemyToSpawn, transform.position, Quaternion.identity);
+        // 2. 전체 가중치 범위에서 랜덤한 정수를 뽑는다.
+        int randomWeight = Random.Range(0, totalWeight);
+
+        // 3. 가중치를 누적하면서 선택된 구간을 찾는다.
+        int cumulativeWeight = 0;
+        foreach (EnemySpawnData data in _spawnDataTable.Datas)
+        {
+            cumulativeWeight += data.Weight;
+            if (randomWeight < cumulativeWeight)
+            {
+                GameObject enemy = Instantiate(data.EnemyPrefab);
+                enemy.transform.position = transform.position;
+                break;
+            }
+        }
     }
 }

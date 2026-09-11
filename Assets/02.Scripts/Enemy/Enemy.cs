@@ -92,13 +92,15 @@ public abstract class Enemy : MonoBehaviour
                 Instantiate(itemToSpawn, transform.position, Quaternion.identity);
             }
 
+            // 점수 증가
+            GameObject smObject = GameObject.Find("ScoreManager");
+            ScoreManager scoreManager = smObject.GetComponent<ScoreManager>();
+            scoreManager.CurrentScore++;
+
             // Enemy 파괴
             Destroy(this.gameObject, 0.2f);
 
             SpawnDeathEffect();
-
-
-            // 일정 확률로 Item 생성
         }
     }
 

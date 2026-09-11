@@ -16,6 +16,20 @@ public class Bullet : MonoBehaviour
         _audioSource.Play();
     }
 
+    // 활성화 될 때마다 자동으로 호출되는 이벤트 함수
+    public void OnSpawn()
+    {
+        // 프리팹이 풀에 의해 활성화될 때마다
+        // 초기화하는 코드들이 들어간다.
+        PlaySound();
+    }
+
+    public void PlaySound()
+    {
+        _audioSource.pitch = UnityEngine.Random.Range(1f, 3f);
+        _audioSource.Play();
+    }
+
     private void Update()
     {
         Vector2 direction = Vector2.up; // new Vector2(1,0);
@@ -30,7 +44,8 @@ public class Bullet : MonoBehaviour
         if (enemy != null)
         {
             enemy.TakeDamage(Damage);
-            Destroy(this.gameObject);
+            // Destroy(this.gameObject);
+            gameObject.SetActive(false); // 비활성화
         }
     }
 

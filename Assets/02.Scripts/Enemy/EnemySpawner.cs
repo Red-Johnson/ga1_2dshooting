@@ -28,9 +28,6 @@ public class EnemySpawner : MonoBehaviour
 
     private void Spawn()
     {
-        int randomPercent = Random.Range(1, 101);
-
-
         // 가중치 랜덤 선택
         // 각 아이템에 가중치를 부여, 가중치가 클수록 높은 확률로 선택되도록 한다.
 

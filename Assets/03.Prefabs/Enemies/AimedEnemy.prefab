@@ -111,9 +111,7 @@ MonoBehaviour:
   _moveSpeed: 3
   _health: 100
   Damage: 10
-  _attackSpeedUpItem: {fileID: 6117984142343457908, guid: 6f5b4d545d006654a9ec66d05228d48f, type: 3}
-  _healthUpItem: {fileID: 7282805591370169764, guid: 04bcb3343a6733141b6cba10a5c8544a, type: 3}
-  _moveSpeedUpItem: {fileID: -9147648705940169553, guid: e854ae8752a460c42917e49ed8586bf6, type: 3}
+  _spawnDataTable: {fileID: 11400000, guid: 36a1cfeb49d3d7a4081ac2ede94e4525, type: 2}
   DamagedSound: {fileID: 8300000, guid: b7a6491641028594bb7053fca74357fd, type: 3}
   _itemPrefabs: []
   _deathEffectPrefab: {fileID: 2433282508537954060, guid: 3ef3ae421f71c5c4e97fe12dc2fc6312, type: 3}

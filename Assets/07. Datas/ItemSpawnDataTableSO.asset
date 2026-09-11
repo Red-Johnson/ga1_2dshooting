@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0a3b1b4442821a41888012f6dafc3f9, type: 3}
+  m_Name: ItemSpawnDataTableSO
+  m_EditorClassIdentifier: Assembly-CSharp::ItemSpawnDataTableSO
+  _spawnDatas:
+  - _itemPrefab: {fileID: 6117984142343457908, guid: 6f5b4d545d006654a9ec66d05228d48f, type: 3}
+    _weight: 1
+  - _itemPrefab: {fileID: 7282805591370169764, guid: 04bcb3343a6733141b6cba10a5c8544a, type: 3}
+    _weight: 1
+  - _itemPrefab: {fileID: -9147648705940169553, guid: e854ae8752a460c42917e49ed8586bf6, type: 3}
+    _weight: 1

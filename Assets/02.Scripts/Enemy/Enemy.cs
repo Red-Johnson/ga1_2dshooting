@@ -9,10 +9,8 @@ public abstract class Enemy : MonoBehaviour
     private bool _isDead = false;
 
 
-    // Enemy가 드랍하는 아이템 목록
-    [SerializeField] private Item _attackSpeedUpItem;
-    [SerializeField] private Item _healthUpItem;
-    [SerializeField] private Item _moveSpeedUpItem;
+    [SerializeField] private ItemSpawnDataTableSO _spawnDataTable;
+    [SerializeField, Range(0, 100)] private int _itemDropChance = 30;
 
     private Animator _animator;
 
@@ -59,11 +57,6 @@ public abstract class Enemy : MonoBehaviour
 
         if (_health <= 0)
         {
-            int randomDropPercent = Random.Range(1, 101);
-            int randomItemPercent = Random.Range(1, 91);
-
-            Item itemToSpawn = null;
-
             _isDead = true;
 
             if (TryGetComponent<Collider2D>(out var col))
@@ -71,37 +64,78 @@ public abstract class Enemy : MonoBehaviour
                 col.enabled = false;
             }
 
-            if (randomDropPercent <= 30)
+            int randomPercent = Random.Range(1, 101);
+            if (randomPercent <= _itemDropChance)
             {
-                if (randomItemPercent <= 30)
+                if (_spawnDataTable != null)
                 {
-                    itemToSpawn = _attackSpeedUpItem;
-                }
-                else if (randomItemPercent <= 60)
-                {
-                    itemToSpawn = _healthUpItem;
-                }
-                else if (randomItemPercent <= 90)
-                {
-                    itemToSpawn = _moveSpeedUpItem;
+                    Item itemPrefab = GetRandomItemPrefab();
+                    if (itemPrefab != null)
+                    {
+                        Item item = Instantiate(itemPrefab);
+                        item.transform.position = transform.position;
+                    }
                 }
             }
 
-            if (itemToSpawn != null)
-            {
-                Instantiate(itemToSpawn, transform.position, Quaternion.identity);
-            }
 
             // 점수 증가
             GameObject smObject = GameObject.Find("ScoreManager");
-            ScoreManager scoreManager = smObject.GetComponent<ScoreManager>();
-            scoreManager.CurrentScore++;
+            if (smObject != null)
+            {
+                ScoreManager scoreManager = smObject.GetComponent<ScoreManager>();
+                scoreManager.CurrentScore++;
+            }
+
 
             // Enemy 파괴
             Destroy(this.gameObject, 0.2f);
-
             SpawnDeathEffect();
         }
+    }
+
+    private Item GetRandomItemPrefab()
+    {
+        ItemSpawnData[] spawnDatas = _spawnDataTable.SpawnDatas;
+        if (spawnDatas == null || spawnDatas.Length == 0)
+        {
+            return null;
+        }
+
+        int totalWeight = 0;
+        foreach (ItemSpawnData data in spawnDatas)
+        {
+            if (data == null || data.ItemPrefab == null || data.Weight <= 0)
+            {
+                continue;
+            }
+
+            totalWeight += data.Weight;
+        }
+
+        if (totalWeight <= 0)
+        {
+            return null;
+        }
+
+        int randomWeight = Random.Range(0, totalWeight);
+
+        int cumulativeWeight = 0;
+        foreach (ItemSpawnData data in spawnDatas)
+        {
+            if (data == null || data.ItemPrefab == null || data.Weight <= 0)
+            {
+                continue;
+            }
+
+            cumulativeWeight += data.Weight;
+            if (randomWeight < cumulativeWeight)
+            {
+                return data.ItemPrefab;
+            }
+        }
+
+        return null;
     }
 
     private void SpawnDeathEffect()

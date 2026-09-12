@@ -1349,10 +1349,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemySpawner_Right
       objectReference: {fileID: 0}
-    - target: {fileID: 3674480958371361310, guid: 22f75cb9adba7134d85b9b8059da2167, type: 3}
-      propertyPath: _spawnDataTable
-      value: 
-      objectReference: {fileID: 11400000, guid: 886fa1990ca669441a0d4104d4aa2d46, type: 2}
     - target: {fileID: 8958345352513231785, guid: 22f75cb9adba7134d85b9b8059da2167, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.5
@@ -2167,10 +2163,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemySpawner_Center
       objectReference: {fileID: 0}
-    - target: {fileID: 3674480958371361310, guid: 22f75cb9adba7134d85b9b8059da2167, type: 3}
-      propertyPath: _spawnDataTable
-      value: 
-      objectReference: {fileID: 11400000, guid: 886fa1990ca669441a0d4104d4aa2d46, type: 2}
     - target: {fileID: 8958345352513231785, guid: 22f75cb9adba7134d85b9b8059da2167, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -2353,10 +2345,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemySpawner_Left
       objectReference: {fileID: 0}
-    - target: {fileID: 3674480958371361310, guid: 22f75cb9adba7134d85b9b8059da2167, type: 3}
-      propertyPath: _spawnDataTable
-      value: 
-      objectReference: {fileID: 11400000, guid: 886fa1990ca669441a0d4104d4aa2d46, type: 2}
     - target: {fileID: 8958345352513231785, guid: 22f75cb9adba7134d85b9b8059da2167, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.5

@@ -59,7 +59,7 @@ public abstract class Enemy : MonoBehaviour
 
         if (DamagedSound != null)
         {
-            _damagedAudioSource.PlayOneShot(DamagedSound);
+            SoundManager.Instance.PlaySfx(DamagedSound);
         }
 
         _health -= damage;
@@ -102,9 +102,11 @@ public abstract class Enemy : MonoBehaviour
                 scoreManager.CurrentScore++;
             }
 
-
-            // Enemy 반납 (Invoke 함수: 지정한 함수를 입력한 시간만큼 지연 실행)
-            Invoke(nameof(ReturnToPool), 0.2f);
+            // 폭발 이펙트 생성
+            SpawnDeathEffect();
+            
+            // Enemy 반납
+            EnemyPool.Instance.ReturnEnemy(this.gameObject);
         }
     }
 

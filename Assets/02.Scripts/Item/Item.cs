@@ -10,8 +10,9 @@ public abstract class Item : MonoBehaviour
     private float _timer;
     private Transform _playerTransform;
 
-    private void Start()
+    private void OnEnable()
     {
+        _timer = 0;
         GameObject player = GameObject.FindGameObjectWithTag("Player");
 
         if (player != null)
@@ -47,10 +48,9 @@ public abstract class Item : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             Effect(other.gameObject);
-
             SpawnLootEffect();
 
-            Destroy(this.gameObject);
+            ItemPool.Instance.ReturnItem(this);
         }
     }
 

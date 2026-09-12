@@ -6,6 +6,8 @@ public abstract class Enemy : MonoBehaviour
     [SerializeField] protected float _moveSpeed = 3;
     [SerializeField] protected int _health = 100;
 
+    private int _maxHealth;
+    
     public int Damage = 10;
     private bool _isDead = false;
 
@@ -29,6 +31,18 @@ public abstract class Enemy : MonoBehaviour
     {
         _animator = GetComponent<Animator>();
         _damagedAudioSource = GetComponent<AudioSource>();
+        _maxHealth = _health;
+    }
+
+    private void OnEnable()
+    {
+        _health = _maxHealth;
+        _isDead = false;
+
+        if (TryGetComponent<Collider2D>(out var col))
+        {
+            col.enabled = true;
+        }
     }
 
     public void Update()
@@ -56,7 +70,7 @@ public abstract class Enemy : MonoBehaviour
         }
 
 
-        if (_health <= 0)
+        if (_health <= 0 && !_isDead)
         {
             _isDead = true;
 
@@ -73,7 +87,7 @@ public abstract class Enemy : MonoBehaviour
                     Item itemPrefab = GetRandomItemPrefab();
                     if (itemPrefab != null)
                     {
-                        Item item = Instantiate(itemPrefab);
+                        Item item = ItemPool.Instance.GetItem(itemPrefab);
                         item.transform.position = transform.position;
                     }
                 }
@@ -89,12 +103,16 @@ public abstract class Enemy : MonoBehaviour
             }
 
 
-            // Enemy 파괴
-            Destroy(this.gameObject, 0.2f);
-            SpawnDeathEffect();
+            // Enemy 반납 (Invoke 함수: 지정한 함수를 입력한 시간만큼 지연 실행)
+            Invoke(nameof(ReturnToPool), 0.2f);
         }
     }
 
+    private void ReturnToPool()
+    {
+        EnemyPool.Instance.ReturnEnemy(this.gameObject);
+    }
+    
     private Item GetRandomItemPrefab()
     {
         ItemSpawnData[] spawnDatas = _spawnDataTable.SpawnDatas;

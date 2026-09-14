@@ -11,6 +11,8 @@ public class UpgradeManager : MonoBehaviour
     [SerializeField] private Upgrade[] _upgrades;
     public Upgrade[] Upgrades => _upgrades;
 
+    [SerializeField] private UI_Upgrade[] _uiUpgrades;
+
     private void Awake()
     {
         if (_instance != null)
@@ -22,8 +24,43 @@ public class UpgradeManager : MonoBehaviour
         _instance = this;
     }
 
+    private void Start()
+    {
+        RefreshAllUI();
+    }
+
     public void LevelUp(int index)
     {
+        // 골드(점수) 매니저에게 돈이 있는지 물어보고 돈이 있다면 차감 후 업그레이드 호출
+
+        Upgrade upgrade = _upgrades[index];
+
+        if (ScoreManager.Instance.Score < upgrade.Cost)
+        {
+            return;
+        }
+
+        ScoreManager.Instance.Spend(upgrade.Cost);
+
+        if (index < 0 || index >= _upgrades.Length) return;
         _upgrades[index].LevelUp();
+
+        if (_uiUpgrades != null && index < _uiUpgrades.Length && _uiUpgrades[index] != null)
+        {
+            _uiUpgrades[index].Refresh();
+        }
+    }
+
+    public void RefreshAllUI()
+    {
+        if (_uiUpgrades == null) return;
+
+        for (int i = 0; i < _uiUpgrades.Length; i++)
+        {
+            if (_uiUpgrades[i] != null)
+            {
+                _uiUpgrades[i].Refresh();
+            }
+        }
     }
 }

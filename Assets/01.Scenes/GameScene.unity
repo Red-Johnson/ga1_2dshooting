@@ -432,7 +432,7 @@ GameObject:
   - component: {fileID: 115950368}
   - component: {fileID: 115950367}
   m_Layer: 0
-  m_Name: '@SoundManager'
+  m_Name: SoundManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1418,7 +1418,7 @@ GameObject:
   - component: {fileID: 484851957}
   - component: {fileID: 484851956}
   m_Layer: 0
-  m_Name: '@EnemyPoolManager'
+  m_Name: EnemyPoolManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1898,6 +1898,7 @@ GameObject:
   - component: {fileID: 653817678}
   - component: {fileID: 653817677}
   - component: {fileID: 653817680}
+  - component: {fileID: 653817681}
   m_Layer: 5
   m_Name: UpgradeButton
   m_TagString: Untagged
@@ -2035,6 +2036,23 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &653817681
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 653817675}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a14b36f5978059e4f8ef5e270a812279, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UI_Upgrade
+  _index: 0
+  _button: {fileID: 0}
+  _titleText: {fileID: 0}
+  _valueText: {fileID: 0}
+  _scoreCostText: {fileID: 0}
 --- !u!1001 &665949657
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2556,6 +2574,7 @@ GameObject:
   - component: {fileID: 965928413}
   - component: {fileID: 965928412}
   - component: {fileID: 965928411}
+  - component: {fileID: 965928415}
   m_Layer: 5
   m_Name: UpgradeButton (1)
   m_TagString: Untagged
@@ -2693,6 +2712,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 965928409}
   m_CullTransparentMesh: 1
+--- !u!114 &965928415
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 965928409}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a14b36f5978059e4f8ef5e270a812279, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UI_Upgrade
+  _index: 1
+  _button: {fileID: 0}
+  _titleText: {fileID: 0}
+  _valueText: {fileID: 0}
+  _scoreCostText: {fileID: 0}
 --- !u!1 &980272489
 GameObject:
   m_ObjectHideFlags: 0
@@ -3994,7 +4030,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab8130509ea35b54fb1fa18d196109f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UpgradeManager
-  _upgrades: []
+  _upgrades:
+  - _name: ATK
+    _defaultValue: 1
+    _increaseValue: 1
+    _defaultCost: 100
+    _increaseCost: 1.1
+  - _name: FR
+    _defaultValue: 0.005
+    _increaseValue: 0.005
+    _defaultCost: 1000
+    _increaseCost: 1.2
+  - _name: MSP
+    _defaultValue: 0.1
+    _increaseValue: 0.1
+    _defaultCost: 1000
+    _increaseCost: 1.2
+  _uiUpgrades:
+  - {fileID: 653817681}
+  - {fileID: 965928415}
+  - {fileID: 2119214980}
 --- !u!1 &1649716352
 GameObject:
   m_ObjectHideFlags: 0
@@ -4188,7 +4243,7 @@ GameObject:
   - component: {fileID: 1708655084}
   - component: {fileID: 1708655083}
   m_Layer: 0
-  m_Name: '@ItemPoolManager'
+  m_Name: ItemPoolManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4670,6 +4725,7 @@ GameObject:
   - component: {fileID: 2119214978}
   - component: {fileID: 2119214977}
   - component: {fileID: 2119214976}
+  - component: {fileID: 2119214980}
   m_Layer: 5
   m_Name: UpgradeButton (2)
   m_TagString: Untagged
@@ -4807,6 +4863,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2119214974}
   m_CullTransparentMesh: 1
+--- !u!114 &2119214980
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2119214974}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a14b36f5978059e4f8ef5e270a812279, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UI_Upgrade
+  _index: 2
+  _button: {fileID: 0}
+  _titleText: {fileID: 0}
+  _valueText: {fileID: 0}
+  _scoreCostText: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

@@ -3,7 +3,7 @@ using UnityEngine;
 public class SoundManager : MonoBehaviour
 {
     public static SoundManager Instance;
-    
+
     // 효과음을 재생할 공용 스피커
     private AudioSource _sfxSource;
 
@@ -20,7 +20,7 @@ public class SoundManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
-    
+
     // 누군가 효과음을 넘겨주면 겹쳐서(PlayOneShot) 재생해주는 함수
     public void PlaySfx(AudioClip clip)
     {
@@ -29,5 +29,4 @@ public class SoundManager : MonoBehaviour
             _sfxSource.PlayOneShot(clip);
         }
     }
-    
 }

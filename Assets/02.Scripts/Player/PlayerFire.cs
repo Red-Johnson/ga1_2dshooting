@@ -28,6 +28,11 @@ public class PlayerFire : MonoBehaviour
 
     public bool IsAutoFire = false;
 
+    public void SetAuto(bool auto)
+    {
+        IsAutoFire = auto;
+    }
+
     private void Update()
     {
         if (_currentCoolDown > 0)
@@ -50,7 +55,7 @@ public class PlayerFire : MonoBehaviour
             BombFire();
         }
 
-        AutoFire();
+        _autoFireMode();
     }
 
     private void Fire()
@@ -77,7 +82,7 @@ public class PlayerFire : MonoBehaviour
         }
     }
 
-    private void AutoFire()
+    private void _autoFireMode()
     {
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {

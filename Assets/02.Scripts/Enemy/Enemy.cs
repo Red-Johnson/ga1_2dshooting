@@ -7,7 +7,6 @@ public abstract class Enemy : MonoBehaviour
     [SerializeField] protected int _health = 100;
 
     private int _maxHealth;
-    
     public int Damage = 10;
     private bool _isDead = false;
 
@@ -104,7 +103,7 @@ public abstract class Enemy : MonoBehaviour
 
             // 폭발 이펙트 생성
             SpawnDeathEffect();
-            
+
             // Enemy 반납
             EnemyPool.Instance.ReturnEnemy(this.gameObject);
         }
@@ -114,7 +113,7 @@ public abstract class Enemy : MonoBehaviour
     {
         EnemyPool.Instance.ReturnEnemy(this.gameObject);
     }
-    
+
     private Item GetRandomItemPrefab()
     {
         ItemSpawnData[] spawnDatas = _spawnDataTable.SpawnDatas;

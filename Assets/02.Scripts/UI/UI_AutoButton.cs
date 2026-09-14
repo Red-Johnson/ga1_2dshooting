@@ -1,38 +1,49 @@
 using UnityEngine;
 using UnityEngine.UI;
 
+// 자동 사냥(이동/공격) 토글 전담
 public class UI_AutoButton : MonoBehaviour
 {
-    // 버튼을 클릭하면 토글하고 싶다.
-    // - 플레이어의 자동 이동
-    // - 플레이어의 자동 공격
-
-    private Image _myImage;
     [SerializeField] private Sprite _onSprite;
+
     [SerializeField] private Sprite _offSprite;
 
-    private bool _autoMode = false;
+    private Image _myImage;
+    private Button _button;
     private Player _player;
+    private bool _autoMode = false;
 
     private void Start()
     {
         _myImage = GetComponent<Image>();
+        _button = GetComponent<Button>();
         _player = GameObject.FindAnyObjectByType<Player>();
 
-        AutoToggle();
+        // 코드로 토글 이벤트 연결
+        _button.onClick.AddListener(AutoToggle);
+
+        // 초기 이미지 세팅
+        UpdateUI();
     }
 
     public void AutoToggle()
     {
         _autoMode = !_autoMode;
 
-        _player.GetComponent<PlayerFire>().SetAuto(_autoMode);
-        //  _player.GetComponent<PlayerMove>().enabled = !_autoMode;
+        if (_player != null)
+        {
+            _player.GetComponent<PlayerFire>().SetAuto(_autoMode);
+            // _player.GetComponent<PlayerMove>().enabled = !_autoMode;
+        }
 
-        _myImage.sprite = _autoMode ? _onSprite : _offSprite;
+        UpdateUI();
     }
 
-    // todo: 버튼 클릭할 때 애니메이션 및 사운드 추가해보기
-    // 애니메이션: 코드로 구현 - 약간 커졌다가 작아지기
-    // 사운드: 일레븐랩스에서 버튼 클릭 공용 사운드 만들어서 적용하기
+    private void UpdateUI()
+    {
+        if (_myImage != null)
+        {
+            _myImage.sprite = _autoMode ? _onSprite : _offSprite;
+        }
+    }
 }

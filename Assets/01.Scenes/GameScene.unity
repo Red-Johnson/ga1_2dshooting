@@ -2049,10 +2049,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UI_Upgrade
   _index: 0
-  _button: {fileID: 0}
-  _titleText: {fileID: 0}
-  _valueText: {fileID: 0}
-  _scoreCostText: {fileID: 0}
+  _button: {fileID: 653817677}
+  _titleText: {fileID: 435995430}
+  _valueText: {fileID: 1137395695}
+  _scoreCostText: {fileID: 1891167670}
 --- !u!1001 &665949657
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2725,10 +2725,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UI_Upgrade
   _index: 1
-  _button: {fileID: 0}
-  _titleText: {fileID: 0}
-  _valueText: {fileID: 0}
-  _scoreCostText: {fileID: 0}
+  _button: {fileID: 965928412}
+  _titleText: {fileID: 1115865506}
+  _valueText: {fileID: 1322217395}
+  _scoreCostText: {fileID: 209178119}
 --- !u!1 &980272489
 GameObject:
   m_ObjectHideFlags: 0
@@ -4876,10 +4876,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UI_Upgrade
   _index: 2
-  _button: {fileID: 0}
-  _titleText: {fileID: 0}
-  _valueText: {fileID: 0}
-  _scoreCostText: {fileID: 0}
+  _button: {fileID: 2119214977}
+  _titleText: {fileID: 208668224}
+  _valueText: {fileID: 212454002}
+  _scoreCostText: {fileID: 1070183316}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

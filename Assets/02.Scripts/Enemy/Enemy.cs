@@ -92,14 +92,14 @@ public abstract class Enemy : MonoBehaviour
                 }
             }
 
-
             // 점수 증가
             GameObject smObject = GameObject.Find("ScoreManager");
             if (smObject != null)
             {
                 ScoreManager scoreManager = smObject.GetComponent<ScoreManager>();
-                scoreManager.CurrentScore++;
+                scoreManager.SetScore(scoreManager.GetScore() + 100);
             }
+
 
             // 폭발 이펙트 생성
             SpawnDeathEffect();
@@ -173,7 +173,7 @@ public abstract class Enemy : MonoBehaviour
 
             SpawnDeathEffect();
 
-            Destroy(this.gameObject);
+            EnemyPool.Instance.ReturnEnemy(this.gameObject);
         }
     }
 }

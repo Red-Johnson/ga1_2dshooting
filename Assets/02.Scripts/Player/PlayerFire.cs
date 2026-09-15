@@ -50,7 +50,7 @@ public class PlayerFire : MonoBehaviour
             Fire();
         }
 
-        if (Input.GetKeyDown(KeyCode.B))
+        if (SimpleInput.GetButton("Bomb"))
         {
             BombFire();
         }

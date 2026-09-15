@@ -32,8 +32,8 @@ public class PlayerMove : MonoBehaviour
     {
         // 모든 게임의 공통된 이동 구현 순서
         // 1. 키보드 입력을 받는다.
-        float h = Input.GetAxisRaw("Horizontal"); // 키보드 왼/오른쪽 입력 상태에 따라 -1f ~ 0 ~ 1f 로 반환
-        float v = Input.GetAxisRaw("Vertical"); // 키도드 위/아래 입력 상태에 따라 -1f ~ 0 ~ 1f 로 반환
+        float h = SimpleInput.GetAxisRaw("Horizontal"); // 키보드 왼/오른쪽 입력 상태에 따라 -1f ~ 0 ~ 1f 로 반환
+        float v = SimpleInput.GetAxisRaw("Vertical"); // 키도드 위/아래 입력 상태에 따라 -1f ~ 0 ~ 1f 로 반환
 
         // 2. 키보드 입력에 따라 방향을 구한다.
         // 게임에는 벡터라는 위치 자료형이 있다. 벡터는 크기, 방향을 의미한다.

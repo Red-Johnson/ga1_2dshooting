@@ -135,10 +135,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df3985091232065428edb760779bb04c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HomingEnemy
-  _moveSpeed: 3
+  _baseHealth: 70
   _health: 100
+  _moveSpeed: 3
   Damage: 10
   _spawnDataTable: {fileID: 11400000, guid: 36a1cfeb49d3d7a4081ac2ede94e4525, type: 2}
+  _itemDropChance: 30
   DamagedSound: {fileID: 8300000, guid: b7a6491641028594bb7053fca74357fd, type: 3}
   _itemPrefabs: []
   _deathEffectPrefab: {fileID: 2433282508537954060, guid: 3ef3ae421f71c5c4e97fe12dc2fc6312, type: 3}

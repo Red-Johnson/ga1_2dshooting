@@ -9,6 +9,7 @@ public class EnemySpawner : MonoBehaviour
     private float _timer;
 
     [SerializeField] private EnemySpawnDataTableSO _spawnDataTable;
+    [SerializeField] private EnemyBalanceDataTableSO _balanceDataTable;
 
 
     private void Update()
@@ -50,8 +51,26 @@ public class EnemySpawner : MonoBehaviour
             {
                 GameObject enemy = EnemyPool.Instance.GetEnemy(data.EnemyPrefab);
                 enemy.transform.position = transform.position;
+                enemy.GetComponent<Enemy>().SetHealthBalance(GetHealthMultiplier());
                 break;
             }
         }
+    }
+
+    private float GetHealthMultiplier()
+    {
+        // Todo: BestScore에 따라 밸런스 데이터의 multiplier 반환
+        int currentBest = ScoreManager.Instance.BestScore;
+        float currentMultiplier = 1.0f;
+
+        foreach (var balanceData in _balanceDataTable.Datas)
+        {
+            if (currentBest >= balanceData.RequiredScore)
+            {
+                currentMultiplier = balanceData.HealthMultiplier;
+            }
+        }
+
+        return currentMultiplier;
     }
 }

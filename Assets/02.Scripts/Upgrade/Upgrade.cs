@@ -12,7 +12,7 @@ public class Upgrade
     [SerializeField] private float _defaultCost;
     [SerializeField] private float _increaseCost;
 
-    // 실행중에 동적으로 바뀌 속성
+    // 실행중에 동적으로 바뀌는 속성
     private int _level;
     public int Level => _level;
     private float _currentValue;
@@ -29,6 +29,13 @@ public class Upgrade
         _defaultValue = defaultValue;
         _increaseValue = increaseValue;
         _increaseCost = increaseCost;
+
+        Calculate();
+    }
+
+    public void SetLevel(int level)
+    {
+        _level = level;
 
         Calculate();
     }
